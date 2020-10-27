@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import sklearn
+import pickle
 from sklearn import linear_model
 from sklearn import model_selection
 from sklearn.utils import shuffle
@@ -25,13 +26,19 @@ x_train, x_test, y_train, y_test = model_selection.train_test_split(X, y, test_s
 # print(y_test)
 # print('-------------------------------------')
 
-linear = linear_model.LinearRegression()
+# linear = linear_model.LinearRegression()
+#
+# linear.fit(x_train, y_train)
+#
+# score = linear.score(x_test, y_test)
+#
+# print(score)
+#
+# with open('trained_model.pickle', 'wb') as file:
+#     pickle.dump(linear, file)
 
-linear.fit(x_train, y_train)
-
-score = linear.score(x_test, y_test)
-
-print(score)
+with open('trained_model.pickle', 'rb') as file:
+    linear = pickle.load(file)
 
 print("Coefficient or m: \n", linear.coef_)
 print("Intercept or c: \n", linear.intercept_)
