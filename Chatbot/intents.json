@@ -1,0 +1,38 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["How are you?", "Is anyone there?", "Hello", "Good day", "What's up?", "How's it going?", "How you doing?", "Hi"],
+         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye"],
+         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Visit again soon."],
+         "context_set": ""
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure!", "You're most welcome!"],
+         "context_set": ""
+        },
+        {"tag": "hours",
+         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?"],
+         "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"],
+         "context_set": ""
+        },
+        {"tag": "personal_info",
+         "patterns": ["What is your name?", "Who am I talking to?", "Who are you?"],
+         "responses": ["I'm Rahul", "You're talking to Rahul", "Hey! Rahul here"],
+         "context_set": ""
+        },
+        {"tag": "payments",
+         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?", "How can I pay?", "What are the payment methods?"],
+         "responses": ["We accept VISA and Mastercard", "We accept most major credit cards", "You can pay via UPI or debit/credit cards"],
+         "context_set": ""
+        },
+        {"tag": "open_today",
+         "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
+         "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"],
+         "context_set": ""
+        }
+   ]
+}
