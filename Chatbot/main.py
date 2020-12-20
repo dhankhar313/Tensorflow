@@ -117,14 +117,14 @@ def chat():
         prediction = model.predict([user_input_prediction(que, words)])
         user_tag = tags[np.argmax(prediction)]
 
-        if prediction[user_tag] > 0.7:
-            for tag in data['intents']:
-                if tag['tag'] == user_tag:
-                    responses = tag['responses']
+        # if prediction[user_tag] > 0.7:
+        for tag in data['intents']:
+            if tag['tag'] == user_tag:
+                responses = tag['responses']
 
-            print(random.choice(responses))
-        else:
-            print("I didn't quite understand!! Please ask another question!!")
+        print(random.choice(responses))
+    else:
+        print("I didn't quite understand!! Please ask another question!!")
 
 
 if __name__ == '__main__':
