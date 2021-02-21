@@ -1,0 +1,6 @@
+pygame
+graphviz
+matplotlib
+pygame
+neat
+pickle
