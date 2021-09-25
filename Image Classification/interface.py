@@ -35,7 +35,7 @@ def classify(file_path):
     image = np.expand_dims(image, axis=0)
     image = np.array(image)
     pred = np.argmax(model.predict([image])[0], axis=-1)
-    sign = classes[pred]
+    sign = classes[int(pred)]
     print('Uploaded image is a:', sign)
     label.configure(foreground='#011638', text=sign)
 
