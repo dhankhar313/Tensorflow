@@ -11,7 +11,7 @@ from keras.models import load_model
 # Load the trained model to classify the images
 try:
     model = load_model('cifar10Model.h5')
-    print('Loaded an already existing model')
+    print('Loaded an already existing model\nLaunching UI')
 except:
     print('Saved Model not found. Please train the model first by running train.py')
     exit()
