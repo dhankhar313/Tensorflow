@@ -27,6 +27,7 @@ try:
 except:
     num_classes = test_Y.shape[1]
 
+    # Creating neural network
     model = Sequential()
     model.add(Conv2D(32, (3, 3), input_shape=(32, 32, 3),
                      padding='same', activation='relu',
@@ -43,18 +44,21 @@ except:
     model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
     model.summary()
 
+    # Fitting model and testing accuracy
     model.fit(train_X, train_Y, validation_data=(test_X, test_Y), epochs=10, batch_size=32)
-    _, acc = model.evaluate(test_X, test_Y)
+    acc = model.evaluate(test_X, test_Y)[-1]
     print('Model accuracy: ', acc * 100)
 
+    # Saving Trained Model
     model.save("cifar10Model.h5")
 
     results = {0: 'aeroplane', 1: 'automobile', 2: 'bird', 3: 'cat', 4: 'deer', 5: 'dog', 6: 'frog', 7: 'horse',
                8: 'ship', 9: 'truck'}
 
+    # Testing Model on custom image
     im = Image.open("./Testing Data/Horse/1.jpg")
-    # the input image is required to be in the shape of dataset, i.e (32,32,3)
 
+    # Resizing Image to dataset size, i.e (32,32,3)
     im = im.resize((32, 32))
     im = np.expand_dims(im, axis=0)
     im = np.array(im)
