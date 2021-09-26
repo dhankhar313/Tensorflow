@@ -52,7 +52,7 @@ except:
     results = {0: 'aeroplane', 1: 'automobile', 2: 'bird', 3: 'cat', 4: 'deer', 5: 'dog', 6: 'frog', 7: 'horse',
                8: 'ship', 9: 'truck'}
 
-    im = Image.open("./horse1.jpeg")
+    im = Image.open("./Testing Data/Horse/1.jpg")
     # the input image is required to be in the shape of dataset, i.e (32,32,3)
 
     im = im.resize((32, 32))
